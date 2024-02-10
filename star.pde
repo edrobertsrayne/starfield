@@ -18,9 +18,9 @@ class Star {
     y = random(-5000, 5000);
     z = random(0, 2000);
     r = random(5, 20);
-    v = random(5, 15);
+    v = random(1, 15);
     hue = random(0, 60);
-    saturation = random(0, 30);
+    saturation = random(0, 40);
     brightness = 100;
   }
 
@@ -40,11 +40,5 @@ class Star {
     stroke(hue, saturation, brightness);
     strokeWeight(sr);
     line(sx, sy, px, py);
-
-    if (v==0) {
-      noStroke();
-      fill(hue, saturation, brightness);
-      circle(sx, sy, sr);
-    }
   }
 }

@@ -2,10 +2,11 @@ int NUM_STARS = 1000;
 
 Nebula nebula;
 Star[] stars = new Star[NUM_STARS];
-Star[] backgroundStars = new Star[NUM_STARS];
+BackgroundStar[] backgroundStars = new BackgroundStar[NUM_STARS];
 
 void setup() {
-  size(1920, 1080);
+  //size(1920, 1080);
+  size(800, 450);
   fullScreen();
   smooth();
   pixelDensity(1);
@@ -16,7 +17,7 @@ void setup() {
 
   for (int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
-    backgroundStars[i] = new Star();
+    backgroundStars[i] = new BackgroundStar();
     backgroundStars[i].v = 0;
   }
 }
@@ -31,7 +32,11 @@ void draw() {
     s.draw();
   }
   
-  for (Star s : backgroundStars) {
+  for (BackgroundStar s : backgroundStars) {
     s.draw();
   }
+}
+
+void mouseClicked() {
+  save("starfield.png");
 }
