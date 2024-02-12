@@ -9,7 +9,7 @@ class Nebula {
 
 
   Nebula() {
-    noise = new OpenSimplexNoise(12345);
+    noise = new OpenSimplexNoise();
     buffer = new int[width * height];
     img = createImage(width, height, RGB);
     red = createImage(width, height, RGB);
